@@ -4,6 +4,8 @@
 
 package ec.edu.espoch.proyectonuevo;
 
+import ec.edu.espoch.proyectonuevo.vista.Principal;
+
 /**
  *
  * @author SO-LAB1-PC14
@@ -11,6 +13,7 @@ package ec.edu.espoch.proyectonuevo;
 public class ProyectoNuevo {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+       Principal objPrincipal = new Principal();
+       objPrincipal.setVisible(true);
     }
 }

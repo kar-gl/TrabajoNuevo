@@ -4,17 +4,20 @@
  */
 package ec.edu.espoch.proyectonuevo.vista;
 
+import ec.edu.espoch.proyectonuevo.tester.TesterVista;
+
+
 /**
  *
  * @author SO-LAB1-PC14
  */
 public class Principal extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Principal
-     */
+     private TesterVista controlador ;
+      
     public Principal() {
         initComponents();
+        this.controlador= new  TesterVista(this);
+      
     }
 
     /**
@@ -26,57 +29,195 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnEstadoTarea = new javax.swing.ButtonGroup();
+        lblTitulo = new javax.swing.JLabel();
+        lblTituloTarea = new javax.swing.JLabel();
+        lblDescripcion = new javax.swing.JLabel();
+        PANEL = new javax.swing.JScrollPane();
+        txtaMostrarDetalle = new javax.swing.JTextArea();
+        txtfMostrarTitulo = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        rbtCompleto = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        bttGuardar = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        lblError = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        mnTarea = new javax.swing.JMenu();
+        mntListarPendientes = new javax.swing.JMenuItem();
+        mnSalir = new javax.swing.JMenu();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblTitulo.setText("GESTOR DE TAREA ");
+
+        lblTituloTarea.setText("Titulo de la tarea");
+
+        lblDescripcion.setText("Descripcion");
+
+        txtaMostrarDetalle.setColumns(20);
+        txtaMostrarDetalle.setRows(5);
+        PANEL.setViewportView(txtaMostrarDetalle);
+
+        jLabel4.setText("Estado de Tarea ");
+
+        btnEstadoTarea.add(rbtCompleto);
+        rbtCompleto.setText("COMPLETO");
+
+        btnEstadoTarea.add(jRadioButton2);
+        jRadioButton2.setText("PENDIENTE");
+
+        bttGuardar.setText("Guardar");
+        bttGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bttGuardarActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Limpiar");
+
+        lblError.setText("-----------------");
+
+        mnTarea.setText("Tarea");
+
+        mntListarPendientes.setText("Listar Pendientes");
+        mntListarPendientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mntListarPendientesActionPerformed(evt);
+            }
+        });
+        mnTarea.add(mntListarPendientes);
+
+        jMenuBar1.add(mnTarea);
+
+        mnSalir.setText("Salir");
+        jMenuBar1.add(mnSalir);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(181, 181, 181)
+                        .addComponent(lblTitulo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(171, 171, 171)
+                        .addComponent(jLabel4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(98, 98, 98)
+                                .addComponent(bttGuardar))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(80, 80, 80)
+                                .addComponent(rbtCompleto)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(135, 135, 135)
+                                .addComponent(jRadioButton2))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(98, 98, 98)
+                                .addComponent(jButton2))))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(47, 47, 47)
+                            .addComponent(lblTituloTarea)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(txtfMostrarTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(56, 56, 56)
+                            .addComponent(lblDescripcion)
+                            .addGap(27, 27, 27)
+                            .addComponent(PANEL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(191, 191, 191)
+                        .addComponent(lblError)))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(lblTitulo)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblTituloTarea)
+                            .addComponent(txtfMostrarTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblDescripcion)
+                            .addComponent(PANEL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(37, 37, 37)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(bttGuardar)
+                            .addComponent(jButton2))
+                        .addGap(18, 18, 18)
+                        .addComponent(lblError)
+                        .addGap(17, 17, 17))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rbtCompleto)
+                            .addComponent(jRadioButton2))
+                        .addGap(107, 107, 107))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void mntListarPendientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mntListarPendientesActionPerformed
+        // TODO add your handling code here:
+        ListaIU objListar = new ListaIU();
+        objListar.setVisible(true);
+    }//GEN-LAST:event_mntListarPendientesActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Principal().setVisible(true);
-            }
-        });
+    private void bttGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bttGuardarActionPerformed
+        // TODO add your handling code here:
+       controlador.prueba();
+       
+    }//GEN-LAST:event_bttGuardarActionPerformed
+    
+    public String getTitulo(){
+        return txtfMostrarTitulo.getText();
+ 
     }
+    public String getDescripcion(){
+        return txtaMostrarDetalle.getText();
+    }
+     public boolean getEstado(){
+        return rbtCompleto.isSelected();
+
+     }
+     public void error(String text){
+     lblError.setText(text);
+     
+     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane PANEL;
+    private javax.swing.ButtonGroup btnEstadoTarea;
+    private javax.swing.JButton bttGuardar;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JLabel lblDescripcion;
+    private javax.swing.JLabel lblError;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblTituloTarea;
+    private javax.swing.JMenu mnSalir;
+    private javax.swing.JMenu mnTarea;
+    private javax.swing.JMenuItem mntListarPendientes;
+    private javax.swing.JRadioButton rbtCompleto;
+    private javax.swing.JTextArea txtaMostrarDetalle;
+    private javax.swing.JTextField txtfMostrarTitulo;
     // End of variables declaration//GEN-END:variables
 }
